@@ -68,7 +68,7 @@ form > .button:hover {
 /* left search */
 ._16LoD{
 
-  width: 279px;
+  width: 304px;
   height: 50px;
   border: 2px solid black;
   border-radius: 5px;
@@ -83,6 +83,12 @@ border-left-style: none;
 border-right-style: none;
 border-bottom-style: none;
 
+}
+
+.arrow{
+
+  background-color: rgba(0, 0, 255, 0) !important;
+  border: none;
 }
 
 
@@ -147,3 +153,5 @@ list-style: none;
 .dropdown-toggle{
   color: black !important;
 }
+
+
