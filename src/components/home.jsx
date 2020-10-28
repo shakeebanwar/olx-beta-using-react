@@ -4,13 +4,14 @@ import camera1 from '../images/camera1.jpg'
 import camera2 from '../images/camera2.jpg'
 import headphone1 from '../images/headphone1.jpg'
 import headphone2 from '../images/headphone2.jpg'
+import slider2 from '../images/slider2.jpg'
 
 function HomePage() {
   return (
 
     <div className="home-page">
 
-      <img className="slider" src={sliderPic} alt="" />
+      <img className="slider" src={slider2} alt="" />
 
       <br />
       <br />

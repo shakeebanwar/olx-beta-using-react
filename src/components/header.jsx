@@ -86,8 +86,10 @@ function Header() {
 
     </nav>
     {/* navbar option */}
-
+    <div className="col">
     <div className="row">
+
+      
 
 
       <ul className="navoptions">
@@ -125,6 +127,8 @@ function Header() {
         <li>Lands & Plots</li>
 
       </ul>
+    </div>
+
     </div>
     </div>
    
