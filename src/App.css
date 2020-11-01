@@ -492,7 +492,7 @@ font-weight: 700;
 }
 
 .footer .col ul li:hover {
-  color: #ffffff;
+  color:#002f34;
   transition: .1s;
   -webkit-transition: .1s;
   -moz-transition: .1s;
@@ -562,6 +562,7 @@ padding: 16px 0;
   color:#002f34 !important;
   font-weight: bold !important;
   font-size: 15px !important;
+  margin-top: 22px !important;
 
 }
 

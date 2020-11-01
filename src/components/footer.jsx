@@ -41,7 +41,7 @@ function Footer() {
       <div className="footer">
         <div className="contain">
           <div className="col">
-            <h1 className="footerheading">Popular Categories</h1>
+            <h2 className="footerheading">Popular Categories</h2>
             <ul>
               <li>Cars</li>
               <li>Flats for rent</li>
@@ -51,7 +51,7 @@ function Footer() {
             </ul>
           </div>
           <div className="col">
-            <h1 className="footerheading">Trending Searches</h1>
+            <h2 className="footerheading">Trending Searches</h2>
             <ul>
               <li>Bikes</li>
               <li>Watches</li>
@@ -61,7 +61,7 @@ function Footer() {
             </ul>
           </div>
           <div className="col">
-            <h1 className="footerheading">About us</h1>
+            <h2 className="footerheading">About us</h2>
             <ul>
               <li>About OLX Group</li>
               <li>OLX Blog</li>
@@ -71,7 +71,7 @@ function Footer() {
             </ul>
           </div>
           <div className="col">
-            <h1 className="footerheading">OLX</h1>
+            <h2 className="footerheading">OLX</h2>
             <ul>
               <li>Help</li>
               <li>Sitemap</li>
@@ -81,7 +81,7 @@ function Footer() {
           </div>
 
           <div className="col social">
-            <h1 className="footerheading">Follow Us</h1>
+            <h2 className="footerheading">Follow Us</h2>
             <ul>
               <li className="footericon">
               <svg width="30px" height="48px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-77aaa" d="M512 85.325c235.648 0 426.667 191.019 426.667 426.667s-191.019 426.667-426.667 426.667c-235.648 0-426.667-191.019-426.667-426.667s191.019-426.667 426.667-426.667zM512 150.605c-199.595 0-361.429 161.792-361.429 361.387 0 199.637 161.835 361.429 361.429 361.429s361.429-161.792 361.429-361.429c0-199.595-161.835-361.387-361.429-361.387zM616.789 301.133v57.6h-61.312c-15.403 0-28.8 14.848-28.8 31.616v0 63.147h90.069v53.845h-90.069v215.509h-67.115v-215.509h-78.592v-53.845h78.592v-74.325c0-42.752 34.517-78.037 76.672-78.037v0h80.555z" /></svg>
