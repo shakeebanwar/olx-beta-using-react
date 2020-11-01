@@ -17,7 +17,6 @@ function HomePage() {
       <br />
       <div className="container">
 
-
         <h4>Fresh recommendations</h4>
      
 
@@ -361,7 +360,12 @@ function HomePage() {
           </div>
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
+   
     </div>
+    
 
 
 
