@@ -1,7 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-function Header() {
+import { useHistory } from "react-router";
+import check from "./post"
+function Header(props) {
+
+  const history = useHistory();
+
   return (
+
+    
 
 
     <div>
@@ -75,12 +82,14 @@ function Header() {
       {/* sell button */}
 
 
-      <button type="button" className="btn btn-outline-dark sell">
+     {/* <a href="/post"> */}
+     <button type="button" className="btn btn-outline-dark sell" onClick = {()=> history.push('/post')}> 
 
 
         <svg width="16px" height="16px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-367TP textcolor" d="M414.898 123.739v291.218h-291.218l-97.014 97.014 97.014 97.131h291.218v291.16l97.073 97.071 97.073-97.071v-291.16h291.16l97.131-97.131-97.131-97.014h-291.16v-291.218l-97.073-97.073z" /></svg> SELL
         
       </button>
+      {/* </a> */}
 
 
 
@@ -98,7 +107,7 @@ function Header() {
           All CATERGORIES
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Vehicles</a>
+          <a className="dropdown-item" href="/check">Vehicles</a>
           <a className="dropdown-item" href="#">Animals</a>
           <a className="dropdown-item" href="#">Fashion & Beauty</a>
           <a className="dropdown-item" href="#">Services</a>

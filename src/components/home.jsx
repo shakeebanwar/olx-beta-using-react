@@ -5,11 +5,16 @@ import camera2 from '../images/camera2.jpg'
 import headphone1 from '../images/headphone1.jpg'
 import headphone2 from '../images/headphone2.jpg'
 import slider2 from '../images/slider2.jpg'
+import Header from "./header"
+import Footer from "./footer"
 
 function HomePage() {
+
   return (
+   
 
     <div className="home-page">
+       <Header/>
 
       <img className="slider" src={slider2} alt="" />
 
@@ -363,6 +368,8 @@ function HomePage() {
       <br/>
       <br/>
       <br/>
+
+      <Footer/>
    
     </div>
     
