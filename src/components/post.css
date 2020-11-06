@@ -15,7 +15,7 @@
 
   #con1 {
     width: 850px;
-    height: 600px;
+    height: 1500px;
     border: 1px solid rgb(211, 211, 211);
     border-radius: 3px;
   }
@@ -110,4 +110,133 @@ border-bottom: 1px solid rgba(0,47,52,.2);
     min-width: 64px;
     outline: 0;
     padding: 8px 16px;
+}
+
+.titlebox{
+
+    height: 46px;
+    width: 452px;
+    border: 2px solid black;
+    border-radius: 4px;
+
+
+}
+
+.titlebox input{
+
+width: 87%;
+padding: 4px 28px;
+padding-left: 36px;
+margin: 4px 29px;
+border: none;
+}
+
+
+.titleboxspan{
+
+    font-size: 11px;
+}
+
+ 
+
+.description{
+
+
+    height: 126px;
+    width: 452px;
+    border: 2px solid black;
+    border-radius: 4px;
+
+}
+
+.description input{
+
+
+    
+width: 87%;
+padding: 4px 28px;
+padding-left: 36px;
+margin: 4px 29px;
+border: none;
+
+
+}
+
+.pricetitlebox{
+
+    height: 46px;
+    width: 452px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 3px 20px;
+
+
+}
+
+.pricetitlebox input{
+
+width: 90%;
+padding: 4px 33px;
+padding-left: 36px;
+margin: 4px 29px;
+border: none;
+margin: 4px;
+
+
+}
+
+.pricetitleboxline{
+
+    color: rgba(0,47,52,.36);
+height: 32px;
+line-height: 32px;
+/* padding-left: 12px;
+padding-right: 12px; */
+white-space: nowrap;
+border-right: 1px solid rgba(0,47,52,.36);
+}
+
+.photos{
+
+    border: 2px solid #9dadb6;
+    border-top-color: rgb(157, 173, 182);
+    border-right-color: rgb(157, 173, 182);
+    border-bottom-color: rgb(157, 173, 182);
+    border-left-color: rgb(157, 173, 182);
+box-sizing: border-box;
+display: inline-block;
+height: 104px;
+vertical-align: top;
+margin: 0 6px 6px 0;
+width: 104px;
+padding: 20px 22px;
+}
+
+
+.photobutton1 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
+
+.e22Bu span{
+
+    font-size: 11px;
+}
+
+.svgicon{
+
+    
 }
