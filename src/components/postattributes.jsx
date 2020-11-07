@@ -16,7 +16,20 @@ class Attributes extends Component {
             titlevalue : "",
             descriptionvalue : "",
             price : "",
-            state : ""
+            state : "",
+            file : "",
+            file2 : "",
+            file3 : "",
+            file4 : "",
+            file5 : "",
+            file6 : "",
+            file7 : "",
+            file8 : "",
+            file9 : "",
+            file10 : "",
+            file11 : "",
+            file12 : "",
+
 
         }
 
@@ -24,22 +37,359 @@ class Attributes extends Component {
     }
 
     postAdd = ()=>{
+
+       //1st image work
+
+        //save image to database 
+        var image1;
+        var image2;
+        var image3;
+        var image4;
+        var image5;
+        var image6;
+        var image7;
+        var image8;
+        var image9;
+        var image10;
+        var image11;
+        var image12;
+
+
+        var ref = firebase.storage().ref().child(`images/${this.state.file.name}`).put(this.state.file)
+
+
+        //get link uploaded image
+
+        ref.on('state_changed', function(snapshot){
+           
+          }, function(error) {
+            
+          }, function() {
+           
+            ref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+                image1 = downloadURL
+               
+              console.log('File1  is available at', image1);
+            });
+          });
+
+          this.setState({
+            file : image1
+        })
+
+        console.log("state update",this.state.file)
+
+
+        //   //2nd image work
+
+
+        //   //save image to database 
+
+        // var ref2 = firebase.storage().ref().child(`images/${this.state.file2.name}`).put(this.state.file2)
+
+
+        // //get link uploaded image
+
+        // ref2.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref2.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image2 = downloadURL
+        //       console.log('File2 available at', image2);
+        //     });
+        //   });
+
+
+        //   //3rd image work
+
+
+        //     //save image to database 
+
+        // var ref3 = firebase.storage().ref().child(`images/${this.state.file3.name}`).put(this.state.file3)
+
+
+        // //get link uploaded image
+
+        // ref3.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref3.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image3 = downloadURL
+        //       console.log('File3 available at', image3);
+        //     });
+        //   });
+
+
+
+        //   //4th image work
+
+
+        //     //save image to database 
+
+        // var ref4 = firebase.storage().ref().child(`images/${this.state.file4.name}`).put(this.state.file4)
+
+
+        // //get link uploaded image
+
+        // ref4.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref4.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image4 = downloadURL
+        //       console.log('File4 available at', image4);
+        //     });
+        //   });
+
+
+
+        //   //5th image work
+
+
+        //     //save image to database 
+
+        // var ref5 = firebase.storage().ref().child(`images/${this.state.file5.name}`).put(this.state.file3)
+
+
+        // //get link uploaded image
+
+        // ref5.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref5.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image5 = downloadURL
+        //       console.log('File5 available at', image5);
+        //     });
+        //   });
+
+
+        //    //6th image work
+
+
+        //     //save image to database 
+
+        // var ref6 = firebase.storage().ref().child(`images/${this.state.file6.name}`).put(this.state.file6)
+
+
+        // //get link uploaded image
+
+        // ref6.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref6.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //          image6 = downloadURL
+        //       console.log('File6 available at', image6);
+        //     });
+        //   });
+
+
+
+        //       //7th image work
+
+
+        //     //save image to database 
+
+        // var ref7 = firebase.storage().ref().child(`images/${this.state.file7.name}`).put(this.state.file7)
+
+
+        // //get link uploaded image
+
+        // ref7.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref7.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image7 = downloadURL
+        //       console.log('File7 available at', image7);
+        //     });
+        //   });
+
+
+
+
+
+
+        //     //8th image work
+
+
+        //     //save image to database 
+
+        // var ref8 = firebase.storage().ref().child(`images/${this.state.file8.name}`).put(this.state.file8)
+
+
+        // //get link uploaded image
+
+        // ref8.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref8.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image8 = downloadURL
+        //       console.log('File8 available at', image8);
+        //     });
+        //   });
+
+
+
+        //     //9th image work
+
+
+        //     //save image to database 
+
+        // var ref9 = firebase.storage().ref().child(`images/${this.state.file9.name}`).put(this.state.file9)
+
+
+        // //get link uploaded image
+
+        // ref9.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref9.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image9 = downloadURL
+        //       console.log('File9 available at', image9);
+        //     });
+        //   });
+
+
+
+        //    //10th image work
+
+
+        //     //save image to database 
+
+        // var ref10 = firebase.storage().ref().child(`images/${this.state.file10.name}`).put(this.state.file10)
+
+
+        // //get link uploaded image
+
+        // ref10.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref10.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image10 = downloadURL
+        //       console.log('File10 available at', image10);
+        //     });
+        //   });
+
+
+
+        //    //11th image work
+
+
+        //     //save image to database 
+
+        // var ref11 = firebase.storage().ref().child(`images/${this.state.file11.name}`).put(this.state.file11)
+
+
+        // //get link uploaded image
+
+        // ref11.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref11.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image11 = downloadURL
+        //       console.log('File11 available at', image11);
+        //     });
+        //   });
+
+
+
+          
+        //    //12th image work
+
+
+        //     //save image to database 
+
+        // var ref12 = firebase.storage().ref().child(`images/${this.state.file12.name}`).put(this.state.file12)
+
+
+        // //get link uploaded image
+
+        // ref12.on('state_changed', function(snapshot){
+           
+        //   }, function(error) {
+            
+        //   }, function() {
+           
+        //     ref12.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+        //         image12 = downloadURL
+        //       console.log('File11 available at', image12);
+        //     });
+        //   });
+
+
+
+
+
+
         let condition = this.state.condition;
         let titlevalue = this.state.titlevalue;
         let descriptionvalue = this.state.descriptionvalue;
         let price = this.state.price;
         let state = this.state.state;
         
-        firebase.database().ref('/').child("post").push({
-            condition : condition,
-            titlevalue : titlevalue,
-            descriptionvalue : descriptionvalue,
-            price : price,
-            state : state,
+        // firebase.database().ref('/').child("post").push({
+        //     condition : condition,
+        //     titlevalue : titlevalue,
+        //     descriptionvalue : descriptionvalue,
+        //     price : price,
+        //     state : state,
+        //     img1 : image1,
+        //     img2 : image2,
+        //     img3 : image3,
+        //     img4 : image4,
+        //     img5 : image5,
+        //     img6 : image6,
+        //     img7 : image7,
+        //     img8 : image8,
+        //     img9 : image9,
+        //     img10 : image10,
+        //     img11 : image11,
+        //     img12 : image12,
 
-        })
 
-        console.log("my firedata",condition,titlevalue,descriptionvalue,price,state)
+        // })
+
+        console.log("my firedata",this.state.file)
     }
 
     render() {
@@ -218,7 +568,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image1">
 
-                                        <input type="file" hidden id="image1" onChange={(e)=>console.log(e.target.value)} />
+                                        <input type="file" hidden id="image1" onChange={(e)=>this.setState({file:e.target.files[0]})} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -244,7 +594,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image2">
 
-                                        <input type="file" hidden id="image2" />
+                                        <input type="file" hidden id="image2" onChange={(e)=>this.setState({file2:e.target.files[0]})} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -268,7 +618,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image3">
 
-                                        <input type="file" hidden id="image3" />
+                                        <input type="file" hidden id="image3"  onChange={(e)=>this.setState({file3:e.target.files[0]})}/>
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -291,7 +641,7 @@ class Attributes extends Component {
                                 <button className="photobutton1">
                                     <label htmlFor="image4">
 
-                                        <input type="file" hidden id="image4" />
+                                        <input type="file" hidden id="image4"  onChange={(e)=>this.setState({file4:e.target.files[0]})} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -318,7 +668,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image5">
 
-                                        <input type="file" hidden id="image5" />
+                                        <input type="file" hidden id="image5"  onChange={(e)=>this.setState({file5:e.target.files[0]})} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -342,7 +692,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image6">
 
-                                        <input type="file" hidden id="image6" />
+                                        <input type="file" hidden id="image6"  onChange={(e)=>this.setState({file6:e.target.files[0]})}/>
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -366,7 +716,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image7">
 
-                                        <input type="file" hidden id="image7" />
+                                        <input type="file" hidden id="image7"  onChange={(e)=>this.setState({file7:e.target.files[0]})} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -390,7 +740,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image8">
 
-                                        <input type="file" hidden id="image8" />
+                                        <input type="file" hidden id="image8"  onChange={(e)=>this.setState({file8:e.target.files[0]})} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -418,7 +768,7 @@ class Attributes extends Component {
                                 <button className="photobutton1">
                                     <label htmlFor="image9">
 
-                                        <input type="file" hidden id="image9" />
+                                        <input type="file" hidden id="image9"   onChange={(e)=>this.setState({file9:e.target.files[0]})}/>
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -442,7 +792,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image10">
 
-                                        <input type="file" hidden id="image10" />
+                                        <input type="file" hidden id="image10"  onChange={(e)=>this.setState({file10:e.target.files[0]})}/>
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -466,7 +816,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image11">
 
-                                        <input type="file" hidden id="image11" />
+                                        <input type="file" hidden id="image11"   onChange={(e)=>this.setState({file11:e.target.files[0]})}/>
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -490,7 +840,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image12">
 
-                                        <input type="file" hidden id="image12" />
+                                        <input type="file" hidden id="image12"  onChange={(e)=>this.setState({file12:e.target.files[0]})} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
