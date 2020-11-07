@@ -12,6 +12,13 @@ function Attributes(props) {
         myimage: "svgicon"
     })
 
+    function hideImage() {
+
+        changeimage({
+            myimage: "svgiconhide"
+        })
+    }
+
     const history = useHistory();
 
     return (
@@ -364,9 +371,9 @@ function Attributes(props) {
                         <div className="photos">
 
 
-                            <button className="photobutton1">
+                            <button className="photobutton1" onClick={hideImage}>
 
-                                <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className="" fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
+                                <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className={setimage.myimage} fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
 
                             </button>
@@ -384,6 +391,95 @@ function Attributes(props) {
 
 
                 </div>
+
+                <br />
+
+                <div className="headerline">
+
+
+                </div>
+
+                <br />
+
+                <div className="container">
+
+                    <h5 className="bold">Confirm Your Location</h5>
+                    <div className="container">
+                        <label for="">State *</label>
+
+                        <div data-aut-id="locationBox" className="_16LoD"><span><svg width="25px" height="25px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-77aaa" d="M448 725.333c-152.917 0-277.333-124.416-277.333-277.333s124.416-277.333 277.333-277.333c152.917 0 277.333 124.416 277.333 277.333s-124.416 277.333-277.333 277.333v0zM884.437 824.107v0.021l-151.915-151.936c48.768-61.781 78.144-139.541 78.144-224.192 0-199.979-162.688-362.667-362.667-362.667s-362.667 162.688-362.667 362.667c0 199.979 162.688 362.667 362.667 362.667 84.629 0 162.411-29.376 224.171-78.144l206.144 206.144h60.352v-60.331l-54.229-54.229z" /></svg></span>
+
+                            <input type="text" name="" id="" className="_1jABB" placeholder="Pakistan" />
+                            <span class="dropdown">
+                                <button className="arrow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+
+
+                                    <svg width="24px" height="24px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-77aaa" d="M85.392 277.333h60.331l366.336 366.336 366.336-366.336h60.331v60.331l-408.981 409.003h-35.307l-409.045-409.003z"></path></svg>
+                                </button>
+
+
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a className="dropdown-item" href="#">Karachi</a>
+                                    <a className="dropdown-item" href="#">Islamabad</a>
+                                    <a className="dropdown-item" href="#">Lahore</a>
+                                    <a className="dropdown-item" href="#">Quetta</a>
+
+                                </div>
+                            </span>
+                        </div>
+                        <span className="titleboxspan">
+                            This Field is Mandatory
+                             </span>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+                <br />
+
+                <div className="headerline">
+
+
+                </div>
+
+                <br />
+
+                <div className="container">
+
+                    <h5 className="bold">REVIEW YOUR DETAILS</h5>
+                    <div className="container">
+                        {/* <label for="">Condition *</label>
+
+                        <div className="rui-D-GoM"><button className="rui-YHJnT" data-aut-id="opnew_used0">New</button><button className="rui-YHJnT" data-aut-id="opnew_used1">Used</button></div> */}
+                    </div>
+                </div>
+
+
+                <br />
+
+                <div className="headerline">
+
+
+                </div>
+
+                <br/>
+
+
+                <div className="container">
+                    <button className="rui-3sH3b rui-2yJ_A rui-1zK8h _3bFmz rui-1cDvO">
+
+                        Post now
+                    </button>
+
+                    
+                </div>
+
+
 
 
 
@@ -436,3 +532,17 @@ function Attributes(props) {
 }
 
 export default Attributes
+
+
+
+
+// class postattributes extends Component {
+//     render() {
+//         return (
+//             <div>
+
+//             </div>
+//         );
+//     }
+// }
+
