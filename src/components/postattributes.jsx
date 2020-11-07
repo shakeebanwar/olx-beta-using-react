@@ -515,10 +515,13 @@ function Attributes(props) {
 
 
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a className="dropdown-item" href="#">Karachi</a>
+                                    <a className="dropdown-item" href="#">Azad Kashmir</a>
+                                    <a className="dropdown-item" href="#">Balochistan</a>
                                     <a className="dropdown-item" href="#">Islamabad</a>
-                                    <a className="dropdown-item" href="#">Lahore</a>
-                                    <a className="dropdown-item" href="#">Quetta</a>
+                                    <a className="dropdown-item" href="#">Khyber Pakhtunkhwa</a>
+                                    <a className="dropdown-item" href="#">Northern Areas</a>
+                                    <a className="dropdown-item" href="#">Punjab</a>
+                                    <a className="dropdown-item" href="#">Sindh</a>
 
                                 </div>
                             </span>
@@ -545,23 +548,7 @@ function Attributes(props) {
 
                 <br />
 
-                <div className="container">
-
-                    <h5 className="bold">REVIEW YOUR DETAILS</h5>
-                    <div className="container">
-                        {/* <label for="">Condition *</label>
-
-                        <div className="rui-D-GoM"><button className="rui-YHJnT" data-aut-id="opnew_used0">New</button><button className="rui-YHJnT" data-aut-id="opnew_used1">Used</button></div> */}
-                    </div>
-                </div>
-
-
-                <br />
-
-                <div className="headerline">
-
-
-                </div>
+               
 
                 <br/>
 
