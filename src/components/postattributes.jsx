@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import { useHistory } from "react-router";
 import './post.css';
+import firebase from '../config/firebase'
 
 
 
@@ -12,9 +13,7 @@ class Attributes extends Component {
         super()
         this.state = {
             condition: "",
-            type : "",
             titlevalue : "",
-            description : "",
             descriptionvalue : "",
             price : "",
             state : ""
@@ -24,11 +23,31 @@ class Attributes extends Component {
 
     }
 
+    postAdd = ()=>{
+        let condition = this.state.condition;
+        let titlevalue = this.state.titlevalue;
+        let descriptionvalue = this.state.descriptionvalue;
+        let price = this.state.price;
+        let state = this.state.state;
+        
+        firebase.database().ref('/').child("post").push({
+            condition : condition,
+            titlevalue : titlevalue,
+            descriptionvalue : descriptionvalue,
+            price : price,
+            state : state,
+
+        })
+
+        console.log("my firedata",condition,titlevalue,descriptionvalue,price,state)
+    }
+
     render() {
         console.log("Condition is  ", this.state.condition)
         console.log("type is  ", this.state.titlevalue)
         console.log("description is  ", this.state.descriptionvalue)
         console.log("price is  ", this.state.price)
+        console.log("state is   ", this.state.state)
         return (
             <div>
 
@@ -199,7 +218,7 @@ class Attributes extends Component {
 
                                     <label htmlFor="image1">
 
-                                        <input type="file" hidden id="image1" />
+                                        <input type="file" hidden id="image1" onChange={(e)=>console.log(e.target.value)} />
 
                                         <svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd"><path className="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z" /></svg>
 
@@ -523,13 +542,13 @@ class Attributes extends Component {
 
 
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a className="dropdown-item" href="#">Azad Kashmir</a>
-                                        <a className="dropdown-item" href="#">Balochistan</a>
-                                        <a className="dropdown-item" href="#">Islamabad</a>
-                                        <a className="dropdown-item" href="#">Khyber Pakhtunkhwa</a>
-                                        <a className="dropdown-item" href="#">Northern Areas</a>
-                                        <a className="dropdown-item" href="#">Punjab</a>
-                                        <a className="dropdown-item" href="#">Sindh</a>
+                                        <a className="dropdown-item" onClick={()=>this.setState({state:"Kashmir"})} >Azad Kashmir</a>
+                                        <a className="dropdown-item" onClick={()=>this.setState({state:"Balochistan"})} >Balochistan</a>
+                                        <a className="dropdown-item" onClick={()=>this.setState({state:"Islamabad"})}>Islamabad</a>
+                                        <a className="dropdown-item" onClick={()=>this.setState({state:"Khyber Pakhtunkhwa"})} >Khyber Pakhtunkhwa</a>
+                                        <a className="dropdown-item" onClick={()=>this.setState({state:"Northern Areas"})} >Northern Areas</a>
+                                        <a className="dropdown-item" onClick={()=>this.setState({state:"Punjab"})} >Punjab</a>
+                                        <a className="dropdown-item" onClick={()=>this.setState({state:"Sindh"})} >Sindh</a>
 
                                     </div>
                                 </span>
@@ -562,7 +581,7 @@ class Attributes extends Component {
 
 
                     <div className="container">
-                        <button className="rui-3sH3b rui-2yJ_A rui-1zK8h _3bFmz rui-1cDvO">
+                        <button className="rui-3sH3b rui-2yJ_A rui-1zK8h _3bFmz rui-1cDvO" onClick={()=>this.postAdd()}>
 
                             Post now
                     </button>
