@@ -8,6 +8,7 @@ import firebase from '../config/firebase'
 
 
 class Attributes extends Component {
+    
 
     constructor() {
         super()
@@ -35,6 +36,8 @@ class Attributes extends Component {
 
 
     }
+
+   
 
     getImageurl = (imagelink) => {
 
@@ -246,10 +249,14 @@ class Attributes extends Component {
 
         })
 
+        this.props.history.push('/')
+
         console.log("Successfully post")
+        
     }
 
     render() {
+        console.log("history",this.props.history)
         console.log("Condition is  ", this.state.condition)
         console.log("type is  ", this.state.titlevalue)
         console.log("description is  ", this.state.descriptionvalue)
