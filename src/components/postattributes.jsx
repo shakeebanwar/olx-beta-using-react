@@ -8,6 +8,8 @@ import firebase from '../config/firebase'
 
 
 class Attributes extends Component {
+
+    
     
 
     constructor() {
@@ -16,6 +18,8 @@ class Attributes extends Component {
             condition: "",
             conditionStatus : "",
             titlevalue: "",
+            type : "",
+            typestatus : "",
             descriptionvalue: "",
             price: "",
             state: "",
@@ -41,31 +45,24 @@ class Attributes extends Component {
 
     conditionState = (setclass)=>{
 
-        console.log("working",setclass)
-        if(setclass == "New"){
-            console.log("if work")
-
-            this.setState({ condition: setclass ,conditionStatus : setclass })
-
-        }
-
-        else{
-            console.log("else work")
-
-            this.setState({ condition: setclass ,conditionStatus : setclass })
 
 
-        }
+        this.setState({ condition: setclass ,conditionStatus : setclass })
+
+      
         
         
     }
    
 
-    getImageurl = (imagelink) => {
+  typeState = (setclass)=>{
+    
 
-        console.log("image link is ", imagelink)
+    this.setState({ type: setclass ,typestatus : setclass  })
 
-    }
+    
+
+  }
 
 
 
@@ -248,9 +245,11 @@ class Attributes extends Component {
         let descriptionvalue = this.state.descriptionvalue;
         let price = this.state.price;
         let state = this.state.state;
+        let type = this.state.type;
 
         firebase.database().ref('/').child("post").push({
             condition : condition,
+            type : type,
             titlevalue : titlevalue,
             descriptionvalue : descriptionvalue,
             price : price,
@@ -281,7 +280,8 @@ class Attributes extends Component {
         console.log("history",this.props.history)
         console.log("Condition is  ", this.state.condition)
         console.log("condition status is    ", this.state.conditionStatus)
-        console.log("type is  ", this.state.titlevalue)
+        console.log("type is  ", this.state.type)
+        console.log("type status is   ", this.state.typestatus)
         console.log("description is  ", this.state.descriptionvalue)
         console.log("price is  ", this.state.price)
         console.log("state is   ", this.state.state)
@@ -291,9 +291,9 @@ class Attributes extends Component {
 
 
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <i id="arrow" className="fas fa-arrow-left" />
-                    <div className="container-fluid">
-                        <a id="olx" className="navbar-brand" href="#"><svg width="50px" height="50px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd">
+                    <i id="arrow" className="fas fa-arrow-left"  />
+                    <div className="container-fluid" >
+                        <a href = "#"  id="olx" className="navbar-brand" ><svg  width="50px" height="50px" viewBox="0 0 1024 1024" data-aut-id="icon" className fillRule="evenodd">
                             <path className="rui-77aaa" d="M661.333 256v512h-128v-512h128zM277.333 298.667c117.824 0 213.333 95.531 213.333 213.333s-95.509 213.333-213.333 213.333c-117.824 0-213.333-95.531-213.333-213.333s95.509-213.333 213.333-213.333zM794.496 384l37.504 37.504 37.504-37.504h90.496v90.496l-37.504 37.504 37.504 37.504v90.496h-90.496l-37.504-37.504-37.504 37.504h-90.496v-90.496l37.504-37.504-37.504-37.504v-90.496h90.496zM277.333 426.667c-47.061 0-85.333 38.293-85.333 85.333s38.272 85.333 85.333 85.333c47.061 0 85.333-38.293 85.333-85.333s-38.272-85.333-85.333-85.333z">
                             </path>
                         </svg></a>
@@ -316,9 +316,21 @@ class Attributes extends Component {
                             <label for="">Condition *</label>
 
                             <div className="rui-D-GoM">
-                            <button className="rui-YHJnT" data-aut-id="opnew_used0" onClick={() => this.conditionState("New")}>New</button>
-                            <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick= {() => this.conditionState("Used")}>Used</button
-                                ></div>
+                                {
+                                    this.state.conditionStatus == "New" ? <button className="afterclickYHJnT" data-aut-id="opnew_used0" onClick={() => this.conditionState("New")}>New</button> :
+
+                                    <button className="rui-YHJnT" data-aut-id="opnew_used0" onClick={() => this.conditionState("New")}>New</button>
+                                }
+
+                                {
+
+                                    this.state.conditionStatus == "Used" ?  <button className="afterclickYHJnT" data-aut-id="opnew_used1" onClick= {() => this.conditionState("Used")}>Used</button
+                                    > :  <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick= {() => this.conditionState("Used")}>Used</button
+                                >
+                                }
+                            
+                           
+                                </div>
                         </div>
                     </div>
 
@@ -333,11 +345,38 @@ class Attributes extends Component {
                             <label for="">Type *</label>
 
                             <div className="rui-D-GoM">
-                                <button className="rui-YHJnT" data-aut-id="opnew_used0" onClick={() => this.setState({ type: "Apple" })}>Apple</button>
-                                <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.setState({ type: "Dany Tabs" })}>Dany Tabs</button>
-                                <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.setState({ type: "Q Tabs" })}>Q Tabs</button>
-                                <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.setState({ type: "Samsung" })}>Samsung</button>
-                                <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.setState({ type: "Other Tabs" })}>Other Tabs</button>
+
+                                {
+
+                                    this.state.typestatus == "Apple" ?  <button className="afterclickYHJnT" data-aut-id="opnew_used0" onClick={() => this.typeState("Apple")}>Apple</button> :
+
+                                    <button className="rui-YHJnT" data-aut-id="opnew_used0" onClick={() => this.typeState("Apple")}>Apple</button>
+                                }
+
+                                {
+
+                                    this.state.typestatus == "Dany Tabs" ? <button className="afterclickYHJnT" data-aut-id="opnew_used1" onClick={() => this.typeState("Dany Tabs")}>Dany Tabs</button> : <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.typeState("Dany Tabs")}>Dany Tabs</button>
+                                }
+
+
+                                {
+
+                                    this.state.typestatus == "Q Tabs" ?    <button className="afterclickYHJnT" data-aut-id="opnew_used1" onClick={() => this.typeState("Q Tabs")}>Q Tabs</button> :   <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.typeState("Q Tabs")} >Q Tabs</button>
+                                }
+                               
+                               {
+
+                                   this.state.typestatus == "Samsung" ? <button className="afterclickYHJnT" data-aut-id="opnew_used1" onClick={() => this.typeState("Samsung")}>Samsung</button> : <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.typeState("Samsung")}>Samsung</button>
+                               }
+                                
+
+                                {
+
+                                    this.state.typestatus == "Other Tabs" ?   <button className="afterclickYHJnT" data-aut-id="opnew_used1" onClick={() => this.typeState("Other Tabs")}>Other Tabs</button> :  <button className="rui-YHJnT" data-aut-id="opnew_used1"  onClick={() => this.typeState("Other Tabs")}>Other Tabs</button>
+                                }
+                              
+                                
+                               
                             </div>
                         </div>
                     </div>
