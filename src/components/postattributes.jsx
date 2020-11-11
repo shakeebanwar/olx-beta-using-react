@@ -14,6 +14,7 @@ class Attributes extends Component {
         super()
         this.state = {
             condition: "",
+            conditionStatus : "",
             titlevalue: "",
             descriptionvalue: "",
             price: "",
@@ -37,6 +38,27 @@ class Attributes extends Component {
 
     }
 
+
+    conditionState = (setclass)=>{
+
+        console.log("working",setclass)
+        if(setclass == "New"){
+            console.log("if work")
+
+            this.setState({ condition: setclass ,conditionStatus : setclass })
+
+        }
+
+        else{
+            console.log("else work")
+
+            this.setState({ condition: setclass ,conditionStatus : setclass })
+
+
+        }
+        
+        
+    }
    
 
     getImageurl = (imagelink) => {
@@ -258,6 +280,7 @@ class Attributes extends Component {
     render() {
         console.log("history",this.props.history)
         console.log("Condition is  ", this.state.condition)
+        console.log("condition status is    ", this.state.conditionStatus)
         console.log("type is  ", this.state.titlevalue)
         console.log("description is  ", this.state.descriptionvalue)
         console.log("price is  ", this.state.price)
@@ -293,8 +316,8 @@ class Attributes extends Component {
                             <label for="">Condition *</label>
 
                             <div className="rui-D-GoM">
-                                <button className="rui-YHJnT" data-aut-id="opnew_used0" onClick={() => this.setState({ condition: "New" })}>New</button>
-                                <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick={() => this.setState({ condition: "Used" })}>Used</button
+                            <button className="rui-YHJnT" data-aut-id="opnew_used0" onClick={() => this.conditionState("New")}>New</button>
+                            <button className="rui-YHJnT" data-aut-id="opnew_used1" onClick= {() => this.conditionState("Used")}>Used</button
                                 ></div>
                         </div>
                     </div>
