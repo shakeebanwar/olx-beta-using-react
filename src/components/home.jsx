@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import sliderPic from '../images/slider.jpg'
 import camera1 from '../images/camera1.jpg'
 import camera2 from '../images/camera2.jpg'
@@ -7,13 +7,55 @@ import headphone2 from '../images/headphone2.jpg'
 import slider2 from '../images/slider2.jpg'
 import Header from "./header"
 import Footer from "./footer"
+import firebase from '../config/firebase'
 
-function HomePage() {
 
-  return (
-   
 
-    <div className="home-page">
+class HomePage extends Component {
+
+
+  constructor() {
+    super()
+    this.state = {
+        myadds: "",
+     
+
+
+    }
+
+
+}
+
+fetchadd = ()=>{
+
+      let myAdd = [];
+
+        firebase.database().ref('/').child("post").on('child_added',(data)=>{
+
+          myAdd.push(data.val())
+
+ 
+        
+        })
+
+        this.setState({
+          myadds  : myAdd
+        })
+
+        console.log("my adds is ",this.state.myadds)
+}
+
+componentDidMount(){
+
+  this.fetchadd()
+  
+}
+
+
+  render() {
+    console.log("my adds ",this.state.myadds)
+    return (
+      <div className="home-page">
        <Header/>
 
       <img className="slider" src={slider2} alt="" />
@@ -163,12 +205,10 @@ function HomePage() {
    
     </div>
     
-
-
-
-
-
-  )
+    );
+  }
 }
 
+
 export default HomePage
+
