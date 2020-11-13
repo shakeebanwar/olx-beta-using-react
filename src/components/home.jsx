@@ -10,15 +10,14 @@ import Footer from "./footer"
 import firebase from '../config/firebase'
 
 
-
 class HomePage extends Component {
 
 
   constructor() {
     super()
     this.state = {
-        myadds: "",
-     
+        products : []
+   
 
 
     }
@@ -26,23 +25,47 @@ class HomePage extends Component {
 
 }
 
+  
 fetchadd = ()=>{
 
-      let myAdd = [];
 
-        firebase.database().ref('/').child("post").on('child_added',(data)=>{
 
-          myAdd.push(data.val())
+  
+        firebase.database().ref('post').on('value',(data)=>{
 
- 
+          let product = []
+
+          data.forEach(list=>{
+            product.push(list.val())
+          })
+
+          this.setState({
+            products : product
+          })
+
+          
+
+          console.log("firebase object is ",data.val())
+          console.log("my object is ",product)
         
         })
 
-        this.setState({
-          myadds  : myAdd
-        })
+        
 
-        console.log("my adds is ",this.state.myadds)
+      //   firebase.database().ref("post").on("value" , data => {
+      //     let product = [];
+      //     data.forEach(list =>{
+      //         product.push(list.val());
+      //     });
+      //     this.setState({product : product});
+      // })
+
+        
+      
+      
+        
+
+        
 }
 
 componentDidMount(){
@@ -53,7 +76,9 @@ componentDidMount(){
 
 
   render() {
-    console.log("my adds ",this.state.myadds)
+
+    console.log("mystate data is ",this.state.products)
+ 
     return (
       <div className="home-page">
        <Header/>
@@ -73,34 +98,60 @@ componentDidMount(){
             <div className="container">
               <div className="row">
 
+                {this.state.products.map((v,i)=>(
+                   <div className="col-md-3">
+
+                   <div className="wsk-cp-product">
+                        <div className="heartsvg">
+    
+                          <svg width="24px" height="24px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-77aaa" d="M830.798 448.659l-318.798 389.915-317.828-388.693c-20.461-27.171-31.263-59.345-31.263-93.033 0-85.566 69.605-155.152 155.152-155.152 72.126 0 132.752 49.552 150.051 116.364h87.777c17.299-66.812 77.905-116.364 150.051-116.364 85.547 0 155.152 69.585 155.152 155.152 0 33.687-10.802 65.862-30.293 91.811zM705.939 124.121c-80.853 0-152.204 41.425-193.939 104.204-41.736-62.778-113.086-104.204-193.939-104.204-128.33 0-232.727 104.378-232.727 232.727 0 50.657 16.194 98.948 47.806 140.897l328.766 402.133h100.189l329.716-403.355c30.662-40.727 46.856-89.018 46.856-139.675 0-128.349-104.398-232.727-232.727-232.727z"></path></svg>
+                        </div>
+                        <div className="wsk-cp-img">
+                          <br />
+                          <img src={v.img1} alt="Product" className="img-responsive" style = {{width : "200px" ,height : "180px"}} /></div>
+                        <div className="wsk-cp-text">
+                          <div className="category">
+                            <span className="featured">Featured</span>
+                          </div>
+                          <div className="title-product">
+                <h3>Rs {v.price}</h3>
+                          </div>
+    
+                          <div className="card-footer">
+                      {v.titlevalue}
+                           
+                          </div>
+                        </div>
+                      </div>
+                      
+                  
+                    </div>
+                ))}
 
                 
-                <div className="col-md-3">
-                  <div className="wsk-cp-product">
-                    <div className="heartsvg">
 
-                      <svg width="24px" height="24px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-77aaa" d="M830.798 448.659l-318.798 389.915-317.828-388.693c-20.461-27.171-31.263-59.345-31.263-93.033 0-85.566 69.605-155.152 155.152-155.152 72.126 0 132.752 49.552 150.051 116.364h87.777c17.299-66.812 77.905-116.364 150.051-116.364 85.547 0 155.152 69.585 155.152 155.152 0 33.687-10.802 65.862-30.293 91.811zM705.939 124.121c-80.853 0-152.204 41.425-193.939 104.204-41.736-62.778-113.086-104.204-193.939-104.204-128.33 0-232.727 104.378-232.727 232.727 0 50.657 16.194 98.948 47.806 140.897l328.766 402.133h100.189l329.716-403.355c30.662-40.727 46.856-89.018 46.856-139.675 0-128.349-104.398-232.727-232.727-232.727z"></path></svg>
-                    </div>
-                    <div className="wsk-cp-img">
-                      <br />
-                      <img src={camera1} alt="Product" className="img-responsive" />
-                    </div>
-                    <div className="wsk-cp-text">
-                      <div className="category">
-                        <span className="featured">Featured</span>
-                      </div>
-                      <div className="title-product">
-                        <h3>Rs 2,38,0000</h3>
-                      </div>
 
-                      <div className="card-footer">
-                       Handy Camera Hd
-                       
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
+
+                 
+
+                     
+
+
+                     
+                     
+                 
+
+
+                 
+
+                  
+                
+
+
+
+
+                
 
                 
 
